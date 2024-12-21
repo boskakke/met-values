@@ -109,15 +109,19 @@ const bicycling = [
 ]
 const gender = ref('male')
 const weight = ref(80)
+const height = ref(180)
 const age = ref(50)
 
 function formatNumber(number) {
   return new Intl.NumberFormat('da-DK').format(number)
 }
 
+// Mifflin-St Jeor Equation
 const bmr = computed(() => {
-  const factor = gender.value === 'male' ? 24 : 22
-  return weight.value * factor
+  const bmr =
+    10 * weight.value + 6.25 * height.value - 5 * age.value + (gender.value === 'male' ? 5 : -161)
+
+  return Math.round(bmr)
 })
 
 const calBurn = (met) => {
@@ -135,6 +139,10 @@ const calBurn = (met) => {
         <div class="flex items-center gap-2">
           <span class="w-20">Alder:</span>
           <input type="number" v-model="age" class="px-4 py-2 bg-white rounded-lg" />
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-20">Højde:</span>
+          <input type="number" v-model="height" class="px-4 py-2 bg-white rounded-lg" />
         </div>
         <div class="flex items-center gap-2">
           <span class="w-20">Køn:</span>
