@@ -137,23 +137,24 @@ const calBurn = (met) => {
     <div class="bg-gray-100 p-4 space-y-4 rounded-lg inline-flex justify-between gap-4 mb-6">
       <div class="flex gap-2 flex-col justify-between h-full rounded-lg">
         <div class="flex items-center gap-2">
-          <span class="w-20">Alder:</span>
-          <input type="number" v-model="age" class="px-4 py-2 bg-white rounded-lg" />
+          <span class="w-20 shrink-0">Alder:</span>
+          <input type="number" v-model="age" class="px-4 py-2 bg-white rounded-lg w-full" />år
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-20">Højde:</span>
-          <input type="number" v-model="height" class="px-4 py-2 bg-white rounded-lg" />
+          <span class="w-20 shrink-0">Højde:</span>
+          <input type="number" v-model="height" class="px-4 py-2 bg-white rounded-lg w-full" />
+          cm
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-20">Køn:</span>
-          <select v-model="gender" class="px-4 py-2 bg-white rounded-lg">
+          <span class="w-20 shrink-0">Køn:</span>
+          <select v-model="gender" class="px-4 py-2 bg-white rounded-lg w-full">
             <option value="male">Male</option>
             <option value="female">Female</option>
           </select>
         </div>
         <div class="flex items-center gap-2">
-          <span class="w-20">Vægt:</span>
-          <input type="number" v-model="weight" class="px-4 py-2 bg-white rounded-lg" />
+          <span class="w-20 shrink-0">Vægt:</span>
+          <input type="number" v-model="weight" class="px-4 py-2 bg-white rounded-lg w-full" />kg
         </div>
       </div>
 
