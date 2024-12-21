@@ -108,7 +108,7 @@ const bicycling = [
   { code: '01262', met: 2.3, description: 'Bicycling, eccentric only, 100 to 149 W' },
 ]
 const gender = ref('male')
-const weight = ref(97)
+const weight = ref(80)
 const age = ref(50)
 
 function formatNumber(number) {
