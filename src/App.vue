@@ -121,8 +121,10 @@ const bmr = computed(() => {
 })
 
 const calBurn = (met) => {
-  const number = formatNumber(bmr.value * (met / 24))
-  return number
+  const rawValue = bmr.value * (met / 24)
+  const roundedValue = Math.round(rawValue)
+  const formattedValue = formatNumber(roundedValue)
+  return formattedValue
 }
 </script>
 
@@ -156,15 +158,15 @@ const calBurn = (met) => {
     <table class="w-full">
       <thead>
         <tr class="">
-          <th class="text-left p-2">Kode</th>
+          <!-- <th class="text-left p-2">Kode</th> -->
           <th class="text-left p-2">Beskrivelse</th>
           <th class="text-right p-2">MET</th>
-          <th class="text-right p-2">Kalorieforbrug pr. time</th>
+          <th class="text-right p-2">Dit kalorieforbrug pr. time</th>
         </tr>
       </thead>
       <tbody>
         <tr v-for="activity in bicycling" :key="activity.code" class="">
-          <td class="px-2 py-1">{{ activity.code }}</td>
+          <!-- <td class="px-2 py-1">{{ activity.code }}</td> -->
           <td class="px-2 py-1">{{ activity.description }}</td>
           <td class="px-2 py-1 text-right">{{ activity.met }}</td>
           <td class="text-right">{{ calBurn(activity.met) }}</td>
